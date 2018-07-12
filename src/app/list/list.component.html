@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header">
+    <h3 class="card-heading">{{list.listName}}</h3>
+    <a class="header-icon" (click)="addCard()">
+      <i class="fa fa-plus-square" aria-hidden="true"></i>
+    </a>
+    <a class="header-icon" (click)="deleteList()">
+      <i class="fa fa-trash" aria-hidden="true"></i>
+    </a>
+  </div>
+  <span class="border"></span>
+  <ul class="card-list">
+    <ng-container *ngFor="let card of list.cards">
+        <app-card [card]="card"></app-card>
+    </ng-container>
+  </ul>
+</div>

@@ -1,0 +1,14 @@
+<section class="signin">
+  <header class="header"></header>
+  <div class="conatiner">
+    <div class="signin-container">
+      <h3 class="form-header">Please sign in</h3>
+      <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
+        <input type="text" placeholder="Username" class="input" [formControl]="loginForm.controls['userId']">
+        <input type="password" placeholder="password" class="input" [formControl]="loginForm.controls['password']">
+        <label class="remember"> <input type="checkbox" name= "Remember" [formControl]="loginForm.controls['rememberMe']" value="true"><span> Remember me </span></label>
+        <input type="submit" value="Sign In" class="submit-button input">
+      </form>
+    </div>
+  </div>
+</section>

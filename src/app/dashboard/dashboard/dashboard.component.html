@@ -1,0 +1,32 @@
+<header class="dashboard-header">
+  <h3 class="main-heading">Welcome to Workflow !</h3>
+</header>
+<section class="dashboard-home">
+  <div class="container" *ngIf="boards.length > 0">
+    <div class="card-wrapper">
+      <div class="card-mini" *ngFor="let board of boards">
+        <div class="card-mini-header">
+          <span class="date">{{board.date | date:'mediumDate'}}</span>
+          <span class="color-picker-wrap">
+            <input type="color" value="#696969" class="color-picker">
+            <span>
+              <a class="close" (click)="deleteBoard(board.boardId)"><i class="fa fa-times" aria-hidden="true"></i></a> 
+            </span>
+            </span>
+        </div>
+        <div class="card-mini-body cursor-pointer" (click)="getBoardDetails(board.boardId, board.boardName)">
+          <p>{{board.boardName}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" *ngIf="!boards.length">
+    <p style="text-align: center">You haven't added any Boards</p>
+  </div>
+  <a class="add" (click)="addBoard()">
+    <span> &#43; </span>
+  </a>
+</section>
+<footer class="copyrights">
+  <span>Copyright © 2017 Asteria Aerospace | All Rights Reserved.</span>
+</footer>
